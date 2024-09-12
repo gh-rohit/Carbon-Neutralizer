@@ -1,87 +1,63 @@
 import React, { useState } from 'react';
 
-const LoginModal = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const LoginForm = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // Function to open the modal
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  // Function to close the modal
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form from reloading the page
+    // Handle login logic here (e.g., send login data to an API)
+    console.log('Login submitted:', { email, password });
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      {/* Login Button */}
-      <button
-        onClick={openModal}
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none"
-      >
-        Login
-      </button>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full relative">
-            {/* Close Icon (X button) */}
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-700 hover:text-gray-900 focus:outline-none"
-            >
-              &times;
-            </button>
-
-            {/* Login Form */}
-            <h2 className="text-2xl font-semibold mb-4 text-center">Login</h2>
-            <form className="space-y-4">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 font-medium mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-gray-700 font-medium mb-1"
-                >
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Enter your password"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="bg-blue-500 text-white w-full py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                Submit
-              </button>
-            </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
+              required
+            />
           </div>
-        </div>
-      )}
+          <div className="mb-6">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Login
+            </button>
+            <a href="#" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+              Forgot Password?
+            </a>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default LoginModal;
+export default LoginForm;

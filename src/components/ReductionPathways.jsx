@@ -7,7 +7,7 @@ const pathwaysData = {
   },
   'Energy Efficiency': {
     description: 'Enhancing energy efficiency in buildings and industrial processes can lower energy consumption and emissions.',
-    image: 'https://images.unsplash.com/photo-1725714871742-bfb5a4817d71?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Replace with actual image path
+    image: 'https://d382rz2cea0pah.cloudfront.net/wp-content/uploads/2023/10/Electric-Vehicle-Sales-Surge-40-YoY-in-Q3-2023-with-371214-Units.jpg', // Replace with actual image path
   },
   'Carbon Capture': {
     description: 'Implementing carbon capture technologies can capture CO2 emissions from sources like power plants.',
@@ -49,7 +49,7 @@ const ReductionDropdown = () => {
             <img 
               src={pathwaysData[selectedPathway].image} 
               alt={selectedPathway} 
-              className="w-full h-60 object-cover rounded-lg mb-4"
+              className="w-full h-96 object-cover rounded-lg mb-4"
             />
             <p className="text-gray-600">{pathwaysData[selectedPathway].description}</p>
           </div>
