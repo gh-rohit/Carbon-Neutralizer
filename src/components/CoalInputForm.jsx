@@ -66,7 +66,7 @@ const CoalInputForm = () => {
   return (
     <div
       style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1436891620584-47fd0e565afb?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Replace with your image path
+        backgroundImage: 'url(https://plus.unsplash.com/premium_photo-1663013631081-02a95d7147f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Replace with your image path
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -74,7 +74,7 @@ const CoalInputForm = () => {
     >
       <section id="input-section" className="py-10 bg-opacity-80">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 mt-8 text-zinc-200">
+          <h2 className="text-3xl font-bold text-center mb-8 mt-8 text-black">
             Input Mining and Transportation Activity Data
           </h2>
           <form
@@ -179,13 +179,13 @@ const CoalInputForm = () => {
       {submitted && (
         <section id="results-section" className="py-10 bg-opacity-90" ref={resultRef}>
           <div className="container mx-auto">
-            <div className="results-container grid gap-8">
+            <div className="results-container gap-8 flex  items-center  justify-center">
               {activity === 'mining' && (
-                <div id="mining-results" className="results-box p-6 bg-indigo-200 bg-opacity-20 rounded-lg shadow-lg">
-                  <h2 className="text-3xl font-extrabold mb-6 text-center text-white">
+                <div id="mining-results" className="results-box p-6 bg-white bg-opacity-50 rounded-lg shadow-lg w-96 ">
+                  <h2 className="text-3xl font-extrabold mb-6 text-center text-black">
                     Mining Activity Results
                   </h2>
-                  <p className="text-xl font-bold text-zinc-100 mb-4">
+                  <p className="text-xl font-bold text-zinc-800 mb-4">
                     Emission: <span className="text-2xl font-extrabold">{emission.toFixed(2)}</span> kg CO₂
                   </p>
                   <p className="text-xl font-bold text-zinc-100 mb-4">

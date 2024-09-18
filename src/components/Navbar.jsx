@@ -3,8 +3,12 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div>
-      <div className="nav w-full h-14 flex items-center justify-between p-1 bg-slate-300 mb-1">
-        <h1 className="text-xl font-bold">Neutralizer</h1>
+      <div className="nav w-full h-14 flex items-center justify-between p-1 bg-slate-200 mb-1">
+        <div className="logo flex items-center justify-center gap-1">
+          <img className='h-10 object-cover rounded-full ' src="/m6gMbVlkS3-cl4wtx08YzQ.webp" alt="" />
+        <h1 className="text-xl font-bold">Carbo-Neutralizer</h1>
+        </div>
+      
         <nav className="middle-nav flex gap-5">
           {/* Home NavLink */}
           <NavLink
@@ -51,7 +55,7 @@ const Navbar = () => {
                 : 'font-normal text-black'
             }
           >
-            Reduction Pathways
+            Neutralization Pathways
           </NavLink>
 
           {/* Per Capita Emission NavLink */}

@@ -24,15 +24,15 @@ const ReductionDropdown = () => {
 
   return (
     
-    <div className="p-6 w-full h-screen">
-        <h1 className='text-center text-5xl'>Reduction Pathways</h1>
+    <div className="p-6 w-full h-screen" >
+        <h1 className='text-center text-5xl'>Neutralization Pathways</h1>
       <div className="relative inline-block text-left">
         <div>
           <select
             onChange={(e) => setSelectedPathway(e.target.value)}
             className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           >
-            <option value="">Select Reduction Pathway</option>
+            <option value="">Select Neutralization Pathway</option>
             {Object.keys(pathwaysData).map((pathway) => (
               <option key={pathway} value={pathway}>
                 {pathway}
