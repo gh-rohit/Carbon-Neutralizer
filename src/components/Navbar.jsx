@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="nav w-full h-14 flex items-center justify-between p-1 bg-slate-200 mb-1">
+    <div >
+      <div className="nav w-full h-14 flex items-center justify-between p-1 bg-slate-200">
         <div className="logo flex items-center justify-center gap-1">
           <img className='h-10 object-cover rounded-full ' src="/m6gMbVlkS3-cl4wtx08YzQ.webp" alt="" />
         <h1 className="text-xl font-bold">Carbo-Neutralizer</h1>
@@ -72,12 +72,17 @@ const Navbar = () => {
         </nav>
 
         {/* Login Button */}
+        <div className='flex gap-1 items-center'>
         <NavLink
           to="/LogIn"
-          className="w-fit bg-gray-600 text-white px-4 py-2 rounded-md"
+          className="w-fit bg-gray-600 text-white px-3 py-1 rounded-full text-center"
         >
           Login
         </NavLink>
+        <NavLink to="/Signup" className="w-fit text-green-700  rounded-full">
+         signup
+        </NavLink>
+        </div>
       </div>
     </div>
   );

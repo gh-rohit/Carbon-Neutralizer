@@ -5,11 +5,30 @@ const PerCapitaEmissionCalculator = () => {
   const [population, setPopulation] = useState('');
   const [perCapitaEmission, setPerCapitaEmission] = useState(null);
 
+  // Function to handle input and prevent leading zeros
+  const handleInputChange = (e, setter) => {
+    const value = e.target.value;
+    // Remove leading zero unless the value is exactly "0"
+    if (value === "" || value === "0" || /^[1-9]\d*$/.test(value)) {
+      setter(value); // Set only valid numbers (no leading zeros)
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Check if both inputs are provided and population is not zero
-    if (carbonEmission && population && population > 0) {
-      const perCapita = (carbonEmission / population).toFixed(2); // Calculate per capita emission
+
+    // Convert inputs to numbers
+    const carbonEmissionValue = parseFloat(carbonEmission);
+    const populationValue = parseInt(population, 10);
+
+    // Check if both inputs are provided and valid
+    if (
+      carbonEmissionValue > 0 &&
+      populationValue > 0 &&
+      !isNaN(carbonEmissionValue) &&
+      !isNaN(populationValue)
+    ) {
+      const perCapita = (carbonEmissionValue / populationValue).toFixed(2); // Calculate per capita emission
       setPerCapitaEmission(perCapita); // Set the result
     } else {
       alert('Please enter valid inputs for carbon emission and population.');
@@ -30,7 +49,7 @@ const PerCapitaEmissionCalculator = () => {
               id="carbonEmission"
               placeholder="Enter total carbon emission"
               value={carbonEmission}
-              onChange={(e) => setCarbonEmission(e.target.value)}
+              onChange={(e) => handleInputChange(e, setCarbonEmission)} // Use the custom handler
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
               required
             />
@@ -44,7 +63,7 @@ const PerCapitaEmissionCalculator = () => {
               id="population"
               placeholder="Enter population"
               value={population}
-              onChange={(e) => setPopulation(e.target.value)}
+              onChange={(e) => handleInputChange(e, setPopulation)} // Use the custom handler
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
               required
             />
@@ -61,7 +80,7 @@ const PerCapitaEmissionCalculator = () => {
 
         {perCapitaEmission !== null && (
           <div className="mt-6 text-center">
-            <p className="text-lg font-bold">Per Capita Emission: {perCapitaEmission} tons/year</p>
+            <p className="text-lg font-bold">Per Capita Emission: {perCapitaEmission} tons/person</p>
           </div>
         )}
       </div>

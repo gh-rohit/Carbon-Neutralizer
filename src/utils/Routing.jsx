@@ -6,6 +6,7 @@ import WasteMangement from '../components/WasteMangement';
 import ReductionPathways from '../components/ReductionPathways';
 import LoginModal from '../components/loginModal';
 import PerCapita from '../components/PerCapita'
+import SignUp from '../components/Signup';
 
 
 const Routing = () => {
@@ -19,6 +20,9 @@ const Routing = () => {
         <Route path="/ReductionPathways" element={<ReductionPathways />} />
         <Route path="LogIn" element={< LoginModal/>} />
         <Route path="PerCapita" element={< PerCapita/>}/>
+        <Route path="signup" element={< SignUp/>}/>
+        
+
         
 
       </Routes>

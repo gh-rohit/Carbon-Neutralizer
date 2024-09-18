@@ -181,17 +181,17 @@ const CoalInputForm = () => {
           <div className="container mx-auto">
             <div className="results-container gap-8 flex  items-center  justify-center">
               {activity === 'mining' && (
-                <div id="mining-results" className="results-box p-6 bg-white bg-opacity-50 rounded-lg shadow-lg w-96 ">
+                <div id="mining-results" className="results-box p-6 bg-white bg-opacity-50 rounded-lg shadow-lg w-fit ">
                   <h2 className="text-3xl font-extrabold mb-6 text-center text-black">
                     Mining Activity Results
                   </h2>
                   <p className="text-xl font-bold text-zinc-800 mb-4">
                     Emission: <span className="text-2xl font-extrabold">{emission.toFixed(2)}</span> kg CO₂
                   </p>
-                  <p className="text-xl font-bold text-zinc-100 mb-4">
+                  <p className="text-xl font-bold text-zinc-900 mb-4">
                     Oxygen Required: <span className="text-2xl font-extrabold">{oxygenRequired.toFixed(2)}</span> kg O₂
                   </p>
-                  <p className="text-xl font-bold text-zinc-100">
+                  <p className="text-xl font-bold text-green-900">
                     Trees Required: <span className="text-2xl font-extrabold">{treesRequired.toFixed(2)}</span> trees
                   </p>
                 </div>
